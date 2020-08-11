@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hubcar.Portal.Web", "Hubcar.Portal.Web.csproj", "{F7758140-0812-42C3-AC43-6CB067401054}"
+	ProjectSection(ProjectDependencies) = postProject
+		{76B43041-1FD5-410D-82F4-7D8F79CA9E19} = {76B43041-1FD5-410D-82F4-7D8F79CA9E19}
+		{C6B7F5C4-7885-459F-848E-73788D14CE24} = {C6B7F5C4-7885-459F-848E-73788D14CE24}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubcar.Domain", "..\Domain\Hubcar.Domain.csproj", "{76B43041-1FD5-410D-82F4-7D8F79CA9E19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hubcar.DataBase", "..\DataBase\Hubcar.DataBase.csproj", "{C6B7F5C4-7885-459F-848E-73788D14CE24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7758140-0812-42C3-AC43-6CB067401054}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7758140-0812-42C3-AC43-6CB067401054}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7758140-0812-42C3-AC43-6CB067401054}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7758140-0812-42C3-AC43-6CB067401054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76B43041-1FD5-410D-82F4-7D8F79CA9E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76B43041-1FD5-410D-82F4-7D8F79CA9E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76B43041-1FD5-410D-82F4-7D8F79CA9E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76B43041-1FD5-410D-82F4-7D8F79CA9E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6B7F5C4-7885-459F-848E-73788D14CE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B7F5C4-7885-459F-848E-73788D14CE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B7F5C4-7885-459F-848E-73788D14CE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B7F5C4-7885-459F-848E-73788D14CE24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0EA8FF55-E060-412A-B73F-347D07A235A9}
+	EndGlobalSection
+EndGlobal

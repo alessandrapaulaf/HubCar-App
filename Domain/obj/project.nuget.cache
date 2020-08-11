@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "lJhZzeRECbSTO4h7pQF7L4TSXEeOw2ybfsEa30nMHT8Ef3Vb1/8Gsahcevi7sEH6KaBvgCNgaWf6JDnwfU/hNQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alessandra\\Documents\\Hubcar\\Domain\\Hubcar.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alessandra\\.nuget\\packages\\entityframework\\4.1.10331\\entityframework.4.1.10331.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'EntityFramework 4.1.10331' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "EntityFramework",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

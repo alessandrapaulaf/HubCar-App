@@ -43,7 +43,15 @@
           "dependencies": {
             "EntityFramework": {
               "target": "Package",
-              "version": "[4.1.10331, )"
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

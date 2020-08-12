@@ -15,6 +15,7 @@ namespace Hubcar.Domain.Models
         public string Ano { get; set; }
         public string Placa { get; set; }
         public decimal ValorDiaria { get; set; }
+        public int ProprietarioId { get; }
 
         public virtual Usuario Proprietario { get; set; }
         public virtual ICollection<Aluguel> Aluguel { get; set; }

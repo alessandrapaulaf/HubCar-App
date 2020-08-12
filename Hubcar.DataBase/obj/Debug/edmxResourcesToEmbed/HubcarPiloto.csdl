@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="HubcarPiloto" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="HubcarDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aluguel" EntityType="HubcarPiloto.Aluguel" />
+    <EntitySet Name="Avaliacao" EntityType="HubcarPiloto.Avaliacao" />
+    <EntitySet Name="Carro" EntityType="HubcarPiloto.Carro" />
+    <EntitySet Name="Carteira" EntityType="HubcarPiloto.Carteira" />
+    <EntitySet Name="TipoUsuario" EntityType="HubcarPiloto.TipoUsuario" />
+    <EntitySet Name="Usuario1Set" EntityType="HubcarPiloto.Usuario1" />
+    <AssociationSet Name="fk_AluguelAvaliacao" Association="HubcarPiloto.fk_AluguelAvaliacao">
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+      <End Role="Aluguel" EntitySet="Aluguel" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AluguelCarro" Association="HubcarPiloto.fk_AluguelCarro">
+      <End Role="Carro" EntitySet="Carro" />
+      <End Role="Aluguel" EntitySet="Aluguel" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CarroDono" Association="HubcarPiloto.fk_CarroDono">
+      <End Role="Usuario1" EntitySet="Usuario1Set" />
+      <End Role="Carro" EntitySet="Carro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CarteiraUsuario" Association="HubcarPiloto.fk_CarteiraUsuario">
+      <End Role="Usuario1" EntitySet="Usuario1Set" />
+      <End Role="Carteira" EntitySet="Carteira" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Aluguel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="DataRetirada" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataEntrega" Type="DateTime" Precision="3" />
+    <Property Name="LocalRetirada" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CarroId" Type="Int32" />
+    <Property Name="AvaliacaoId" Type="Int32" />
+    <NavigationProperty Name="Avaliacao" Relationship="HubcarPiloto.fk_AluguelAvaliacao" FromRole="Aluguel" ToRole="Avaliacao" />
+    <NavigationProperty Name="Carro" Relationship="HubcarPiloto.fk_AluguelCarro" FromRole="Aluguel" ToRole="Carro" />
+  </EntityType>
+  <EntityType Name="Avaliacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Nota" Type="Int32" />
+    <NavigationProperty Name="Aluguel" Relationship="HubcarPiloto.fk_AluguelAvaliacao" FromRole="Avaliacao" ToRole="Aluguel" />
+  </EntityType>
+  <EntityType Name="Carro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Modelo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Ano" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="Placa" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="ValorDiaria" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="ProprietarioId" Type="Int32" />
+    <NavigationProperty Name="Aluguel" Relationship="HubcarPiloto.fk_AluguelCarro" FromRole="Carro" ToRole="Aluguel" />
+    <NavigationProperty Name="Usuario" Relationship="HubcarPiloto.fk_CarroDono" FromRole="Carro" ToRole="Usuario1" />
+  </EntityType>
+  <EntityType Name="Carteira">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Saldo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="UsuarioId" Type="Int32" />
+    <NavigationProperty Name="Usuario" Relationship="HubcarPiloto.fk_CarteiraUsuario" FromRole="Carteira" ToRole="Usuario1" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Descricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Usuario1">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Senha" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="UF" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="TipoUsuarioId" Type="Int32" />
+    <NavigationProperty Name="Carro" Relationship="HubcarPiloto.fk_CarroDono" FromRole="Usuario1" ToRole="Carro" />
+    <NavigationProperty Name="Carteira" Relationship="HubcarPiloto.fk_CarteiraUsuario" FromRole="Usuario1" ToRole="Carteira" />
+  </EntityType>
+  <Association Name="fk_AluguelAvaliacao">
+    <End Type="HubcarPiloto.Avaliacao" Role="Avaliacao" Multiplicity="0..1" />
+    <End Type="HubcarPiloto.Aluguel" Role="Aluguel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avaliacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aluguel">
+        <PropertyRef Name="AvaliacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AluguelCarro">
+    <End Type="HubcarPiloto.Carro" Role="Carro" Multiplicity="0..1" />
+    <End Type="HubcarPiloto.Aluguel" Role="Aluguel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aluguel">
+        <PropertyRef Name="CarroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CarroDono">
+    <End Type="HubcarPiloto.Usuario1" Role="Usuario1" Multiplicity="0..1" />
+    <End Type="HubcarPiloto.Carro" Role="Carro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Carro">
+        <PropertyRef Name="ProprietarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CarteiraUsuario">
+    <End Type="HubcarPiloto.Usuario1" Role="Usuario1" Multiplicity="0..1" />
+    <End Type="HubcarPiloto.Carteira" Role="Carteira" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario1">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Carteira">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

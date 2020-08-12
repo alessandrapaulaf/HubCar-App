@@ -8,6 +8,7 @@ namespace Hubcar.Domain.Models
         public Usuario()
         {
             Carro = new HashSet<Carro>();
+            Aluguel = new HashSet<Aluguel>();
         }
 
         public int Id { get; set; }
@@ -20,5 +21,6 @@ namespace Hubcar.Domain.Models
 
         public virtual ICollection<Carro> Carro { get; set; }
         public virtual Carteira Carteira { get; set; }
+        public virtual ICollection<Aluguel> Aluguel { get; set; }
     }
 }

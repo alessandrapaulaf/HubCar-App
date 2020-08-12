@@ -1,0 +1,16 @@
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\Hubcar.DataBase.dll.config
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\Hubcar.DataBase.dll
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\Hubcar.DataBase.pdb
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\Hubcar.DataBase.xml
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\EntityFramework.dll
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\EntityFramework.xml
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.vbprojAssemblyReference.cache
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.Resources.resources
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.vbproj.GenerateResource.cache
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.vbproj.CoreCompileInputs.cache
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.vbproj.CopyComplete
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.dll
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.xml
+C:\Users\Alessandra\Documents\Hubcar\Hubcar.DataBase\obj\Debug\Hubcar.DataBase.pdb

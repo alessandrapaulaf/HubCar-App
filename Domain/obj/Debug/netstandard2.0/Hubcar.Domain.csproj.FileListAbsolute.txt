@@ -6,3 +6,11 @@ C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.Doma
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.dll
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.pdb
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.DataBase.dll
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\EntityFramework.dll
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.DataBase.pdb
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.DataBase.xml
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.DataBase.dll.config
+C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\EntityFramework.xml
+C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csprojAssemblyReference.cache
+C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csproj.CopyComplete

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+  <Alias Key="Model" Value="HubcarPiloto" />
+  <Alias Key="Target" Value="HubcarPiloto.Store" />
+  <EntityContainerMapping CdmEntityContainer="HubcarDbContext" StorageEntityContainer="HubcarPilotoStoreContainer">
+    <EntitySetMapping Name="Aluguel">
+      <EntityTypeMapping TypeName="HubcarPiloto.Aluguel">
+        <MappingFragment StoreEntitySet="Aluguel">
+          <ScalarProperty Name="AvaliacaoId" ColumnName="AvaliacaoId" />
+          <ScalarProperty Name="CarroId" ColumnName="CarroId" />
+          <ScalarProperty Name="LocalRetirada" ColumnName="LocalRetirada" />
+          <ScalarProperty Name="DataEntrega" ColumnName="DataEntrega" />
+          <ScalarProperty Name="DataRetirada" ColumnName="DataRetirada" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Avaliacao">
+      <EntityTypeMapping TypeName="HubcarPiloto.Avaliacao">
+        <MappingFragment StoreEntitySet="Avaliacao">
+          <ScalarProperty Name="Nota" ColumnName="Nota" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carro">
+      <EntityTypeMapping TypeName="HubcarPiloto.Carro">
+        <MappingFragment StoreEntitySet="Carro">
+          <ScalarProperty Name="ProprietarioId" ColumnName="ProprietarioId" />
+          <ScalarProperty Name="ValorDiaria" ColumnName="ValorDiaria" />
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Carteira">
+      <EntityTypeMapping TypeName="HubcarPiloto.Carteira">
+        <MappingFragment StoreEntitySet="Carteira">
+          <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoUsuario">
+      <EntityTypeMapping TypeName="HubcarPiloto.TipoUsuario">
+        <MappingFragment StoreEntitySet="TipoUsuario">
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario1Set">
+      <EntityTypeMapping TypeName="HubcarPiloto.Usuario1">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="TipoUsuarioId" ColumnName="TipoUsuarioId" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HubcarPiloto.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aluguel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="DataRetirada" Type="datetime" Nullable="false" />
+    <Property Name="DataEntrega" Type="datetime" />
+    <Property Name="LocalRetirada" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CarroId" Type="int" />
+    <Property Name="AvaliacaoId" Type="int" />
+  </EntityType>
+  <EntityType Name="Avaliacao">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+    <Property Name="Nota" Type="int" />
+  </EntityType>
+  <EntityType Name="Carro">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="Ano" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="Placa" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="ValorDiaria" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ProprietarioId" Type="int" />
+  </EntityType>
+  <EntityType Name="Carteira">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Saldo" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="UsuarioId" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Senha" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cidade" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="UF" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="TipoUsuarioId" Type="int" />
+  </EntityType>
+  <Association Name="fk_AluguelAvaliacao">
+    <End Role="Avaliacao" Type="Self.Avaliacao" Multiplicity="0..1" />
+    <End Role="Aluguel" Type="Self.Aluguel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Avaliacao">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aluguel">
+        <PropertyRef Name="AvaliacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_AluguelCarro">
+    <End Role="Carro" Type="Self.Carro" Multiplicity="0..1" />
+    <End Role="Aluguel" Type="Self.Aluguel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carro">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Aluguel">
+        <PropertyRef Name="CarroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CarroDono">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Carro" Type="Self.Carro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Carro">
+        <PropertyRef Name="ProprietarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_CarteiraUsuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="0..1" />
+    <End Role="Carteira" Type="Self.Carteira" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Carteira">
+        <PropertyRef Name="UsuarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="HubcarPilotoStoreContainer">
+    <EntitySet Name="Aluguel" EntityType="Self.Aluguel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Avaliacao" EntityType="Self.Avaliacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carro" EntityType="Self.Carro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Carteira" EntityType="Self.Carteira" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoUsuario" EntityType="Self.TipoUsuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_AluguelAvaliacao" Association="Self.fk_AluguelAvaliacao">
+      <End Role="Avaliacao" EntitySet="Avaliacao" />
+      <End Role="Aluguel" EntitySet="Aluguel" />
+    </AssociationSet>
+    <AssociationSet Name="fk_AluguelCarro" Association="Self.fk_AluguelCarro">
+      <End Role="Carro" EntitySet="Carro" />
+      <End Role="Aluguel" EntitySet="Aluguel" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CarroDono" Association="Self.fk_CarroDono">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Carro" EntitySet="Carro" />
+    </AssociationSet>
+    <AssociationSet Name="fk_CarteiraUsuario" Association="Self.fk_CarteiraUsuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Carteira" EntitySet="Carteira" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

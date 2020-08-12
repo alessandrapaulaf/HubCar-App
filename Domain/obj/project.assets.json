@@ -1698,6 +1698,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Hubcar.DataBase/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Hubcar.DataBase.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Hubcar.DataBase.dll": {}
+        }
       }
     }
   },
@@ -6194,11 +6203,17 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Hubcar.DataBase/1.0.0": {
+      "type": "project",
+      "path": "../Hubcar.DataBase/Hubcar.DataBase.vbproj",
+      "msbuildProject": "../Hubcar.DataBase/Hubcar.DataBase.vbproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "EntityFramework >= 6.4.4",
+      "Hubcar.DataBase >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 3.1.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
       "NETStandard.Library >= 2.0.3"
@@ -6233,7 +6248,11 @@
       },
       "frameworks": {
         "netstandard2.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj": {
+              "projectPath": "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -6274,7 +6293,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

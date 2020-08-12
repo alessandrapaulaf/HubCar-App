@@ -29,7 +29,11 @@
         },
         "frameworks": {
           "netstandard2.0": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj": {
+                "projectPath": "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -70,8 +74,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj",
+        "projectName": "Hubcar.DataBase",
+        "projectPath": "C:\\Users\\Alessandra\\Documents\\Hubcar\\Hubcar.DataBase\\Hubcar.DataBase.vbproj"
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

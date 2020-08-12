@@ -7,8 +7,6 @@ namespace Hubcar.Domain.Models
     {
         public int Id { get; set; }
         public decimal? Saldo { get; set; }
-        public int? UsuarioId { get; set; }
-
         public virtual Usuario Usuario { get; set; }
     }
 }

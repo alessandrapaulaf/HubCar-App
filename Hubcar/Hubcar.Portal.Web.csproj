@@ -33,7 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataBase\Hubcar.DataBase.csproj" />
     <ProjectReference Include="..\Domain\Hubcar.Domain.csproj" />
   </ItemGroup>
 

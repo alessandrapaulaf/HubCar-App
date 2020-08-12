@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="311fc8a95b0f47f8b2d9766cce168e9d" Name="Diagram1" >
+        <EntityTypeShape EntityType="HubcarPiloto.Aluguel" Width="1.5" PointX="5.25" PointY="5.125" />
+        <EntityTypeShape EntityType="HubcarPiloto.Avaliacao" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="HubcarPiloto.Carro" Width="1.5" PointX="3" PointY="4.375" />
+        <EntityTypeShape EntityType="HubcarPiloto.Carteira" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="HubcarPiloto.TipoUsuario" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="HubcarPiloto.Usuario1" Width="1.5" PointX="0.75" PointY="6.125" />
+        <AssociationConnector Association="HubcarPiloto.fk_AluguelAvaliacao" />
+        <AssociationConnector Association="HubcarPiloto.fk_AluguelCarro" />
+        <AssociationConnector Association="HubcarPiloto.fk_CarroDono" />
+        <AssociationConnector Association="HubcarPiloto.fk_CarteiraUsuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

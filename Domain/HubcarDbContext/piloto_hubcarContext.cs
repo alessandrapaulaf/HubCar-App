@@ -46,8 +46,9 @@ namespace Hubcar.Domain.HubcarDbContext
                     .IsUnicode(false);
 
                 entity.HasOne(e => e.Avaliacao)
-                    .WithOne(ad => ad.Aluguel)
-                    .HasForeignKey<Avaliacao>(ad => ad.Id);
+                    .WithMany(p => p.Aluguel)
+                    .HasForeignKey(d => d.Avaliacao.Id)
+                    .HasConstraintName("fk_AluguelAvaliacao");
 
                 entity.HasOne(d => d.Carro)
                     .WithMany(p => p.Aluguel)

@@ -4,6 +4,7 @@ using Hubcar.Domain.Models;
 using System.Threading.Tasks;
 using Hubcar.Domain.HubcarDbContext;
 using Hubcar.Portal.Web.Models;
+using Hubcar.Domain.AppServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
@@ -16,9 +17,13 @@ namespace Hubcar.WebApp.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly HubcarDBContext _context;
-        public UsuarioController(HubcarDBContext context)
+        private readonly UsuarioServices _usuarioServices;
+        public UsuarioController
+            (HubcarDBContext context,
+            UsuarioServices usuarioServices)
         {
             _context = context;
+            _usuarioServices = usuarioServices;
         }
 
         // POST: api/Usuario
@@ -36,6 +41,9 @@ namespace Hubcar.WebApp.Controllers
 
             if (_context.Usuario.Where(u => u.Email == model.Email).Any())
                 throw new BusinessException("Já existe uma conta com esse email.");
+
+            if(_context.Usuario.Where(u => u.Cpf.Equals(model.Cpf)).Any())
+                throw new BusinessException("Já existe uma conta com esse CPF.");
 
             var id = new Random();
 
@@ -60,6 +68,11 @@ namespace Hubcar.WebApp.Controllers
             }
 
             return Ok();
+        }
+
+        public Usuario ObterUsuarioAtual()
+        {
+            return _usuarioServices.ObterUsuarioLogado();
         }
     }
 }

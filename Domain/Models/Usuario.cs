@@ -22,5 +22,6 @@ namespace Hubcar.Domain.Models
         public virtual ICollection<Carro> Carro { get; set; }
         public virtual Carteira Carteira { get; set; }
         public virtual ICollection<Aluguel> Aluguel { get; set; }
+        public virtual UsuarioLogado UsuarioLogado { get; set; }
     }
 }

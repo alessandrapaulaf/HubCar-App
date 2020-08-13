@@ -20,6 +20,7 @@ namespace Hubcar.Domain.HubcarDbContext
         public virtual DbSet<Carro> Carro { get; set; }
         public virtual DbSet<Carteira> Carteira { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<UsuarioLogado> UsuarioLogado { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,8 +35,9 @@ namespace Hubcar.Domain.HubcarDbContext
 
             modelBuilder.Entity<Aluguel>(entity =>
             {
+                entity.HasKey(e => e.Id);
 
-                entity.Property(e => e.Id).UseIdentityColumn();
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.DataEntrega).HasColumnType("datetime");
 
@@ -64,7 +66,9 @@ namespace Hubcar.Domain.HubcarDbContext
 
             modelBuilder.Entity<Avaliacao>(entity =>
             {
-                entity.Property(e => e.Id).UseIdentityColumn();
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Descricao)
                     .HasMaxLength(200)
@@ -73,7 +77,9 @@ namespace Hubcar.Domain.HubcarDbContext
 
             modelBuilder.Entity<Carro>(entity =>
             {
-                entity.Property(e => e.Id).UseIdentityColumn();
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Ano)
                     .IsRequired()
@@ -102,18 +108,22 @@ namespace Hubcar.Domain.HubcarDbContext
 
             modelBuilder.Entity<Carteira>(entity =>
             {
-                entity.Property(e => e.Id).UseIdentityColumn();
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Saldo).HasColumnType("decimal(18, 0)");
 
-                entity.HasOne(d => d.Usuario)
+                entity.HasOne<Usuario>(d => d.Usuario)
                     .WithOne(p => p.Carteira)
                     .HasForeignKey<Usuario>(d => d.Id);
             });
 
             modelBuilder.Entity<Usuario>(entity =>
             {
-                entity.Property(e => e.Id).UseIdentityColumn();
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Cidade)
                     .IsRequired()
@@ -148,6 +158,17 @@ namespace Hubcar.Domain.HubcarDbContext
                     .IsUnicode(false)
                     .IsFixedLength();
 
+            });
+
+            modelBuilder.Entity<UsuarioLogado>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Id).IsRequired().ValueGeneratedOnAdd();
+
+                entity.HasOne<Usuario>(e => e.Usuario)
+                    .WithOne(p => p.UsuarioLogado)
+                    .HasForeignKey<Usuario>(d => d.Id);
             });
 
             OnModelCreatingPartial(modelBuilder);

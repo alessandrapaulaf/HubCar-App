@@ -26,7 +26,7 @@ namespace Hubcar.WebApp.Controllers
             _usuarioServices = usuarioServices;
         }
 
-        // POST: api/Usuario
+        // POST: api/Usuario/Create
         [HttpPost]
         public IActionResult Create([FromBody] UsuarioEditModel model)
         {
@@ -64,7 +64,7 @@ namespace Hubcar.WebApp.Controllers
             }
             catch (Exception error)
             {
-                new BusinessException(error.ToString());
+                new BusinessException(error.Message);
             }
 
             return Ok();

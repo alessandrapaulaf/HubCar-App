@@ -1,0 +1,29 @@
+.content {
+    width: 100%;
+    height: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.content .logo {
+    margin: 80px 0px 0;
+}
+
+.content .logo img{
+    width: 530px;
+    height: 200px;
+}
+
+.content .draw img{
+    width: 500px;
+    height: 500px;
+}
+
+.content .input{
+    display: flex;
+}

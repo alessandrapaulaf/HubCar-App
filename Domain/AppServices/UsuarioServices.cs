@@ -1,5 +1,6 @@
 ﻿using Hubcar.Domain.HubcarDbContext;
 using Hubcar.Domain.Models;
+using System;
 
 namespace Hubcar.Domain.AppServices
 {
@@ -14,10 +15,7 @@ namespace Hubcar.Domain.AppServices
 
         public Usuario ObterUsuarioLogado()
         {
-            var logado = _context.UsuarioLogado.Find(1);
-            var usuario = _context.Usuario.Find(logado.UsuarioId);
-
-            return usuario;
+            throw new NotImplementedException();
         }
     }
 }

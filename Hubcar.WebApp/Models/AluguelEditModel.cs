@@ -9,6 +9,6 @@ namespace Hubcar.Portal.Web.Models
         public DateTime DataRetirada { get; set; }
         public DateTime? DataEntrega { get; set; }
         public string LocalRetirada { get; set; }
-        public virtual Carro Carro { get; set; }
+        public int CarroId { get; set; }
     }
 }

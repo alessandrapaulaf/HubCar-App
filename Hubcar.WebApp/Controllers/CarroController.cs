@@ -14,14 +14,11 @@ namespace Hubcar.WebApp.Controllers
     [ApiController]
     public class CarroController : ControllerBase
     {
-        public readonly UsuarioServices _usuarioServices;
         public readonly HubcarDBContext _context;
 
         public CarroController
-            (UsuarioServices usuarioServices,
-            HubcarDBContext context)
+            (HubcarDBContext context)
         {
-            _usuarioServices = usuarioServices;
             _context = context;
         }
 
@@ -30,7 +27,9 @@ namespace Hubcar.WebApp.Controllers
         [HttpPost]
         public IActionResult Create(CarroEditModel model)
         {
-            var usuarioLogado = _usuarioServices.ObterUsuarioLogado();
+            var logado = _context.UsuarioLogado.Find(1);
+            var usuario = _context.Usuario.Find(logado.UsuarioId);
+
             var id = new Random();
 
             if (string.IsNullOrEmpty(model.Modelo) || model.Ano == null || string.IsNullOrEmpty(model.Placa)
@@ -54,8 +53,10 @@ namespace Hubcar.WebApp.Controllers
                     Ano = model.Ano.ToString(),
                     Placa = model.Placa,
                     ValorDiaria = model.ValorDiaria,
-                    Proprietario = usuarioLogado
+                    Proprietario = usuario,
                 });
+
+                _context.SaveChanges();
             } catch(Exception error)
             {
                 throw new BusinessException(error.Message);

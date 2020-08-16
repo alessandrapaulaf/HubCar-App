@@ -1,13 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
-import Counter from './components/Counter';
-import FetchData from  './components/FetchData';
+import HomePage from './pages/home-page';
 
 const Routers = [
-    { path: '/', component: Home, exact: true },
-    { path: '/', component: Counter, exact: false },
-    { path: '/', component: FetchData, exact: false}
+    { path: '/', component: HomePage, exact: true },
 ];  
 
 const RouteApps = ({location}) => {

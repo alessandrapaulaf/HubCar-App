@@ -7,17 +7,23 @@ import Draw from './../../assets/draw.svg'
 class Login extends Component {
   render(){
     return(
-      <div className="content">
-        <div className="logo">
-          <img src={Logo}/>
+      <div className="container">
+        <div className="content">
+          <div className="logo">
+            <img src={Logo}/>
+          </div>
+          <div className="draw">
+            <img src={Draw}/>
+          </div>
         </div>
-        <div className="draw">
-          <img src={Draw}/>
+        <div className="input">
+          <InputGroup>
+            <Input placeholder="Insira seu email aqui." type="email"/>
+          </InputGroup>
+          <InputGroup>
+            <Input placeholder="senha" type="password"/>
+          </InputGroup>
         </div>
-
-        <InputGroup className="input">
-          <Input placeholder="Digite aqui seu email" />
-        </InputGroup>
       </div>
     );
   } 

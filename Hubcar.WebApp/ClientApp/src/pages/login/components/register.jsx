@@ -1,10 +1,11 @@
 import React from 'react';
+import { Button, Form, FormGroup, Input } from 'reactstrap';
 
 const Register = () => {
   return (
-    <div>
-
-    </div>
+    <Form>
+      
+    </Form>
   );
 }
 

@@ -11,6 +11,10 @@ const Login = () => {
     
   }, []);
 
+  function handleChangeRegister(){
+    setRegister(true);
+  }
+
   return(
     <div id="page-home">
       <div className="login">
@@ -19,9 +23,9 @@ const Login = () => {
             !register ?
             <FormLogin/>
             :
-            <Register/>
+            <Register handle/>
           }
-          <a href={register ? "/register" : "/login"}>{register ? "Login" : "Cadastre-se"}</a>
+          <a style={{marginTop: 15}} onClick={handleChangeRegister} href="">{register ? "Login" : "Cadastre-se"}</a>
         </Card>
       </div>
     </div>

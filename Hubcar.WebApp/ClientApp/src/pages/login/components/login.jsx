@@ -12,7 +12,7 @@ const FormLogin = () => {
       <FormGroup>
         <Input type="password" id="examplePassword" placeholder="Senha" />
       </FormGroup>
-      <Button>Login</Button>
+      <Button className="button">Login</Button>
     </Form>
   );
 }

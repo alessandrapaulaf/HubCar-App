@@ -5,9 +5,9 @@ import Counter from './components/Counter';
 import FetchData from  './components/FetchData';
 
 const Routers = [
-    { path: '/home', component: Home, exact: true },
-    { path: '/counter', component: Counter, exact: false },
-    { path: '/fetch-data', component: FetchData, exact: false}
+    { path: '/', component: Home, exact: true },
+    { path: '/', component: Counter, exact: false },
+    { path: '/', component: FetchData, exact: false}
 ];  
 
 const RouteApps = ({location}) => {

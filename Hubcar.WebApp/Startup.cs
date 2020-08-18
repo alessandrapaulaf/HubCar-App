@@ -33,6 +33,16 @@ namespace Hubcar.WebApp
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddCors(setup =>
+            {
+                setup.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.AllowAnyHeader();
+                    builder.AllowAnyMethod();
+                    builder.WithOrigins("https://localhost:44364/");
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

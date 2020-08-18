@@ -42,7 +42,7 @@ const Home = () => {
                     disableToolbar
                     variant="inline"
                     format="MM/dd/yyyy"
-                    margin="normal"
+                    margin="normal" 
                     id="date-picker-inline"
                     label="Date picker inline"
                     // value={selectedDate}

@@ -1,0 +1,19 @@
+.content {
+    display: inline;
+}
+
+#map {
+    float: right;
+    margin-top: 50px;
+}
+
+.card {
+    width:50%;
+    float: left;
+    margin-top: 50px;
+    border: rgba(0, 0, 0, 0.125);
+  }
+
+  .form{
+    width: 65%;
+  }

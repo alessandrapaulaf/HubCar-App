@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form, FormGroup, Input, Col, Row } from 'reactstrap';
 import  InputMask from 'react-input-mask';
 import './login.css';
+import Api from './../../services/Api';
 import axios from 'axios';
+import { Alert, AlertTitle } from '@material-ui/lab';
 
 const Register = () => {
   let [ufsIBGE, setUfsIBGE] = useState([]);
@@ -61,11 +63,35 @@ const Register = () => {
     setValues({
       ...values,
       cpf: cpf
-    })
+    });
   }
 
-  function handleSave(){
+  function handleSave(event){
+    event.preventDefault();
 
+    const data = {
+      nome: values.nome,
+      email: values.email,
+      cpf: values.cpf.replice('/./g', ''),
+      cidade: values.cidade,
+      uf: values.uf
+    }
+
+    fetch(`/api/Usuario/Create`, {
+      method: 'POST',
+      body: data
+    }).then((response) => {
+      if (response.data.status === 200){
+        return(
+          <div>
+          <Alert severity="success">
+            <AlertTitle>Success</AlertTitle>
+            This is a success alert — <strong>check it out!</strong>
+          </Alert>
+          </div>
+        );
+      }
+    });
   }
 
 
@@ -108,7 +134,7 @@ const Register = () => {
           </Col>
         </Row>
       </FormGroup>
-      <Button className="button" onClick={handleSave}>Cadastro</Button>
+      <Button className="button" onSubmit={handleSave}>Cadastro</Button>
     </Form>
   );
 }

@@ -17,13 +17,10 @@ namespace Hubcar.WebApp.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly HubcarDBContext _context;
-        private readonly UsuarioServices _usuarioServices;
         public UsuarioController
-            (HubcarDBContext context,
-            UsuarioServices usuarioServices)
+            (HubcarDBContext context)
         {
             _context = context;
-            _usuarioServices = usuarioServices;
         }
 
         // POST: api/Usuario/Create
@@ -70,9 +67,5 @@ namespace Hubcar.WebApp.Controllers
             return Ok();
         }
 
-        public Usuario ObterUsuarioAtual()
-        {
-            return _usuarioServices.ObterUsuarioLogado();
-        }
     }
 }

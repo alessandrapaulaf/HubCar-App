@@ -20,13 +20,13 @@ const Login = () => {
       <div className="login">
         <Card className="card">
           {
-            register % 2 == 0?
+            register % 2 === 0?
             <FormLogin/>
             :
             <Register/>
           }
           <a style={{marginTop: 15}} className="link" onClick={handleChangeRegister}>
-            {register % 2 != 0? "Login" : "Cadastre-se"}
+            {register % 2 !== 0? "Login" : "Cadastre-se"}
           </a>
         </Card>
       </div>

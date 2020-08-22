@@ -1,6 +1,5 @@
 import React, {  } from 'react';
 import { Button, Form, FormGroup, Input } from 'reactstrap';
-import './login.css';
 
 
 const FormLogin = () => {

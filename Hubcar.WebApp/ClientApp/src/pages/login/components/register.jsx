@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Form, FormGroup, Input, Col, Row } from 'reactstrap';
 import  InputMask from 'react-input-mask';
-import './login.css';
 import Api from '../../../services/Api';
 import axios from 'axios';
 import { FiCheckCircle } from 'react-icons/fi';

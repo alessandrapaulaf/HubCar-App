@@ -7,6 +7,7 @@ import './home.css';
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
 import { red } from '@material-ui/core/colors';
+import Arrow from './../../assets/seta-direita.png'
 
 const defaultMaterialTheme = createMuiTheme({
   palette: {
@@ -16,6 +17,8 @@ const defaultMaterialTheme = createMuiTheme({
 
 const Home = () => {
   let [map, setMap] = useState({});
+  let [dataRetirada, setDataRetirada] = useState(new Date());
+  let [dataEntrega, setDataEntrega] = useState(new Date());
 
   useEffect(() => {
     var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
@@ -27,13 +30,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="content">
+    <div className="container">
       <div className="form">
         <Card style={{padding: 0}} className="card">
           <Form>
             <FormGroup>
               <Label for="exampleEmail">Onde deseja retirar seu carro?</Label>
-              <Input type="text"  placeholder="Digite seu endereço" />
+              <Input className="input" type="text"  placeholder="Digite seu endereço" />
             </FormGroup>
             <FormGroup>
               <ThemeProvider theme={defaultMaterialTheme}>
@@ -41,12 +44,25 @@ const Home = () => {
                   <KeyboardDatePicker
                     disableToolbar
                     variant="inline"
-                    format="MM/dd/yyyy"
+                    format="dd/MM/yyyy"
                     margin="normal" 
                     id="date-picker-inline"
-                    label="Date picker inline"
-                    // value={selectedDate}
-                    // onChange={handleDateChange}
+                    label="Data de retirada do veículo"
+                    value={dataRetirada}
+                    onChange={value => setDataRetirada(value)}
+                    KeyboardButtonProps={{
+                      'aria-label': 'change date',
+                    }}
+                  />
+                  <KeyboardDatePicker
+                    disableToolbar
+                    variant="inline"
+                    format="dd/MM/yyyy"
+                    margin="normal" 
+                    id="date-picker-inline"
+                    label="Data de entrega"
+                    value={dataEntrega}
+                    onChange={value => setDataEntrega(value)}
                     KeyboardButtonProps={{
                       'aria-label': 'change date',
                     }}
@@ -54,11 +70,7 @@ const Home = () => {
                 </MuiPickersUtilsProvider>
               </ThemeProvider>
             </FormGroup>
-            <FormGroup>
-              <Label for="examplePassword">Password</Label>
-              <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
-            </FormGroup>
-            <Button></Button>
+            <Button className="button" style={{marginTop: 15, height: "40px"}}><img src={Arrow} style={{height:"70%"}}/></Button>
           </Form>
         </Card>
       </div>

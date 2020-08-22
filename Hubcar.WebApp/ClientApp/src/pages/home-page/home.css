@@ -11,9 +11,14 @@
     width:50%;
     float: left;
     margin-top: 50px;
-    border: rgba(0, 0, 0, 0.125);
+    border: transparent;
+    background-color: transparent;
   }
 
   .form{
     width: 65%;
+  }
+
+  .button svg{
+    color: beige;
   }

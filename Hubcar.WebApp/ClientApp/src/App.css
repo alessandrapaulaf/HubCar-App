@@ -2,6 +2,7 @@ body{
     font-family: 'Roboto', sans-serif;
     height: 100vh;  
     margin: 0 auto;
+    background-color: rgb(242, 242, 242);
 }
 
 .overlay {
@@ -27,4 +28,15 @@ body{
     height: auto;
     margin-bottom: 30px;
     color: #cc0000;
+}
+
+.button {
+    width: 150px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #cc0000;
+    border-color: #cc0000;
+}
+
+.input:focus {
+    border-color: red;
 }

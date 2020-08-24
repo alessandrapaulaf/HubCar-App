@@ -1,48 +1,40 @@
-import React, { Component } from 'react';
-import { Collapse, Container, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
+import React, { useState } from 'react';
+import { Collapse, Container, Navbar, NavbarBrand, NavItem, NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Logo from './../../assets/logoHigh.png';
+import Logo from './../../assets/logohigh.png';
 import { BsFillPlusSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import './NavMenu.css';
+import CreateCarro from './../../pages/carro/create';
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+export const NavMenu = () => {
+  let [modal, setModal] = useState(false);
 
-  constructor (props) {
-    super(props);
-
-    this.toggleNavbar = this.toggleNavbar.bind(this);
-    this.state = {
-      collapsed: true
-    };
+  function toggleModal(){
+    setModal(!modal);
   }
 
-  toggleNavbar () {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
-
-  render () {
-    return (
-      <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
-          <Container>
-            <NavbarBrand tag={Link} to="/"><img src={Logo} className="logo"/></NavbarBrand>
-            <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse className="d-sm-inline-flex flex-sm-row-reverse" isOpen={!this.state.collapsed} navbar>
-              <ul className="navbar-nav flex-grow">
-                <NavItem>
-                  <NavLink tag={Link} className="icon" to="/create-carro"><BsFillPersonFill/></NavLink>
-                </NavItem>
-                <NavItem>
-                  <NavLink tag={Link} className="icon" to="/counter"><BsFillPlusSquareFill/></NavLink>
-                </NavItem>
-              </ul>
-            </Collapse>
-          </Container>
-        </Navbar>
-      </header>
-    );
-  }
+  return (
+    <header>
+      <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom box-shadow mb-3" light>
+        <Container>
+          <NavbarBrand tag={Link} to="/"><img src={Logo} className="logo"/></NavbarBrand>
+          <Collapse className="d-sm-inline-flex flex-sm-row-reverse" navbar>
+            <ul className="navbar-nav flex-grow">
+              <NavItem>
+                <NavLink tag={Link} className="icon" to="/perfil"><BsFillPersonFill/></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink tag={Link} className="icon" onClick={toggleModal}><BsFillPlusSquareFill/></NavLink>
+              </NavItem>
+            </ul>
+          </Collapse>
+        </Container>
+      </Navbar>
+      <div>
+        <CreateCarro modal={modal} toggle={toggleModal}/>
+      </div>
+    </header>
+  );
 }
+
+export default NavMenu;

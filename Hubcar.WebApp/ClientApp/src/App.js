@@ -13,6 +13,7 @@ export default class App extends Component {
       <div>
         <BrowserRouter>
           <Route component={Routes} />
+          {this.props.children}
         </BrowserRouter>
       </div>
     );

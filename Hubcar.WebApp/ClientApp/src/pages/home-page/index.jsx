@@ -74,6 +74,7 @@ const Home = () => {
           </Form>
         </Card>
       </div>
+      {/* TO-DO: Markers */}
       <div id='map' style={{width: 600, height: 450}}></div>
     </div>
   );

@@ -1,5 +1,5 @@
 # Hubcar-App
-Nesse repositório utilizei a ideia de um projeto da faculdade pra exercitar o que aprendi de C#, criando o Backend ASP.NET Core MVC com entity framework, testes com XUnit e Moq, e o Front com React Hooks.
+Nesse repositório, utilizei a ideia de um projeto da faculdade para criar uma aplicação, utilizando no Backend ASP.NET Core MVC,entity framework, API Rest, testes com XUnit e Moq, autenticação com Oauth2. Já no Front utilizarei React, React Hooks, Redux entre outras. Tecnologias essas que estou aprendendo ou aprimorando meus conhecimentos.
 
 # Projeto em processo de desenvolvimento ❗
 

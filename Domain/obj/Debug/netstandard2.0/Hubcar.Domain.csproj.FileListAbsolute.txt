@@ -3,7 +3,6 @@ C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.Doma
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.AssemblyInfoInputs.cache
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.AssemblyInfo.cs
 C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.Domain.pdb
-C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csproj.CoreCompileInputs.cache
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.dll
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.pdb
 C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.DataBase.dll

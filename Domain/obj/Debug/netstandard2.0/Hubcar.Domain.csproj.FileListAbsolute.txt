@@ -13,3 +13,4 @@ C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\Hubcar.Data
 C:\Users\Alessandra\Documents\Hubcar\Domain\bin\Debug\netstandard2.0\EntityFramework.xml
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csprojAssemblyReference.cache
 C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csproj.CopyComplete
+C:\Users\Alessandra\Documents\Hubcar\Domain\obj\Debug\netstandard2.0\Hubcar.Domain.csproj.CoreCompileInputs.cache

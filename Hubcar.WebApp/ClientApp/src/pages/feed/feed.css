@@ -1,0 +1,44 @@
+* {
+  padding: 0px 5px;
+  color: #333333;
+}
+
+.title {
+  font-size: 28px;
+}
+
+nav{
+  display: flex;
+  margin: 40px 0px 100px 0px;
+}
+
+nav input{
+  border: #dddbda solid 1px;
+}
+
+nav .select-car-size{
+  border: #333333 solid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  width: 300px;
+  padding: 0px;
+  margin-left: 100px;
+}
+
+nav .select-car-size .car-size{
+  width: 33%;
+  text-align: center;
+  cursor: pointer;
+}
+
+nav .select-car-size .car-size.selected{
+  background-color: #333333;
+  color: #fff;
+}
+
+.feed-container{
+  border: red solid;
+  display: flex;
+}

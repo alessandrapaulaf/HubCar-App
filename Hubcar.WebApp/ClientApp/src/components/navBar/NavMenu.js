@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Container, Navbar, NavbarBrand, NavItem, NavLink, Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import Logo from './../../assets/logohigh.png';
+import Logo from './../../assets/logoHigh.png';
 import { BsFillPlusSquareFill, BsFillPersonFill } from 'react-icons/bs';
 import './NavMenu.css';
 import CreateCarro from './../../pages/carro/create';

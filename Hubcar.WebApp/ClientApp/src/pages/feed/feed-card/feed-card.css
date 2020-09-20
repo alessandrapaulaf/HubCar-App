@@ -1,0 +1,34 @@
+.feed-card {
+  width: 300px;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.feed-card .image{
+  margin-bottom: 20px;
+}
+
+.feed-card .description{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.feed-card .description .info{
+  font-size: 14px;
+}
+
+.feed-card .description .hire-button button{
+  background-color: #cc0000;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  border: none
+}

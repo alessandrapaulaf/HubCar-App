@@ -5,17 +5,23 @@ import image from '../../assets/logoHigh.png';
 import mock from './feedMock';
 
 const Feed = () => {
-  const [mockFeed, setMock] = useState([]);
+  var [mockFeed, setMock] = useState([]);
 
   useEffect(() => {
+    mockFeed = mock;
     setMock(mockFeed);
   });
+
+  function filterCar(event){
+    mockFeed = mockFeed.filter(f => f.name.includes(event.target.value));
+  }
+
   return (
     <div>
       <div className="header"><a href="/home"><img src={image} /></a> </div>
       <div className="title">Escolha o carro perfeito para você</div>
       <nav>
-        <input type="text" placeholder="Modelo do Carro" />
+        <input type="text" placeholder="Modelo do Carro" onChange={filterCar}/>
         <div className="select-car-size">
           <div className="car-size">2 Pessoas</div>
           <div className="car-size selected">4 Pessoas</div>
@@ -23,7 +29,7 @@ const Feed = () => {
         </div>
       </nav>
       <div className="feed-container">
-        {mock.map((element, index) => (<FeedCard props={element} key={element.name}></FeedCard>))}
+        {mockFeed.map((element, index) => (<FeedCard props={element} key={element.name}></FeedCard>))}
       </div>
     </div>
   );

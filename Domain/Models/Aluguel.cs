@@ -10,7 +10,7 @@ namespace Hubcar.Domain.Models
         public DateTime? DataEntrega { get; set; }
         public string LocalRetirada { get; set; }
         public int? AvaliacaoId { get; }
-        public int? CarroId { get; }
+        public int CarroId { get; }
         public int UsuarioId { get; set; }
         public virtual Avaliacao Avaliacao { get; set; }
         public virtual Carro Carro { get; set; }

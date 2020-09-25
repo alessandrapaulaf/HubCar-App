@@ -6,7 +6,7 @@ import image from '../../assets/logoHigh.png';
 const Feed = () => {
   return (
     <div>
-      <div className="header"><img src={image} /></div>
+      <div className="header"><a href="/home"><img src={image} /></a> </div>
       <div className="title">Escolha o carro perfeito para você</div>
       <nav>
         <input type="text" placeholder="Modelo do Carro" />

@@ -3,6 +3,11 @@
   color: #333333;
 }
 
+.header img{
+  width: 500px;
+  height: 150px;
+}
+
 .title {
   font-size: 28px;
 }
@@ -39,6 +44,6 @@ nav .select-car-size .car-size.selected{
 }
 
 .feed-container{
-  border: red solid;
   display: flex;
+  flex-flow: row wrap;
 }

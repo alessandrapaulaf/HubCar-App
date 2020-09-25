@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import FeedCard from './feed-card/feed-card';
 import './feed.css';
+import image from '../../assets/logoHigh.png';
 
 const Feed = () => {
   return (
     <div>
-      <div className="header"><img src="https://picsum.photos/560/209" /></div>
+      <div className="header"><img src={image} /></div>
       <div className="title">Escolha o carro perfeito para você</div>
       <nav>
         <input type="text" placeholder="Modelo do Carro" />

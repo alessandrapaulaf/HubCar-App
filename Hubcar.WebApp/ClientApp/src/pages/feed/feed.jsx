@@ -2,8 +2,14 @@ import React, { useEffect, useState } from 'react';
 import FeedCard from './feed-card/feed-card';
 import './feed.css';
 import image from '../../assets/logoHigh.png';
+import mock from './feedMock';
 
 const Feed = () => {
+  const [mockFeed, setMock] = useState([]);
+
+  useEffect(() => {
+    setMock(mockFeed);
+  });
   return (
     <div>
       <div className="header"><a href="/home"><img src={image} /></a> </div>
@@ -17,12 +23,7 @@ const Feed = () => {
         </div>
       </nav>
       <div className="feed-container">
-        <FeedCard></FeedCard>
-        <FeedCard></FeedCard>
-        <FeedCard></FeedCard>
-        <FeedCard></FeedCard>
-        <FeedCard></FeedCard>
-        <FeedCard></FeedCard>
+        {mock.map((element, index) => (<FeedCard props={element} key={element.name}></FeedCard>))}
       </div>
     </div>
   );

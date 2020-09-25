@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './feed-card.css';
 
-const FeedCard = () => {
+const FeedCard = (props, key) => {
+
+  function getSizeCar(size) {
+    const plural = size === 1 ? 'pessoa' : 'pessoas';
+    return `para ${size} ${plural}`
+  }
   return (
     <div>
       <div className="feed-card">
@@ -10,9 +15,9 @@ const FeedCard = () => {
         </div>
         <div className="description">
           <div className="info">
-            <div className="name">Ford 2017</div>
-            <div className="size">para 4 pessoas</div>
-            <div className="price">R$ 30,00</div>
+            <div className="name">{props.props.name}</div>
+            <div className="size">{getSizeCar(props.props.size)}</div>
+            <div className="price">{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL' }).format(props.props.price)}</div>
           </div>
           <div className="hire-button">
             <button>ALUGAR</button>
